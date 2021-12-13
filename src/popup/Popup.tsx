@@ -1,8 +1,16 @@
-import React from "react";
-import { Icon, Grid, Row, Button } from "react-lightning-design-system";
-import { CopyButton } from "./copybtn";
+import React, { CSSProperties } from "react";
+import {
+  Icon,
+  Grid,
+  Row,
+  Button,
+  ButtonGroup,
+} from "react-lightning-design-system";
+import { CopyButton, BtnGrpStyle } from "./copybtn";
 import { Format } from "../constant";
 import { OptionsType } from "../options/Options";
+import { copyToClipboardAsHtml } from "../util";
+import * as CSS from "csstype";
 type Props = {
   title: string;
   url: string;
@@ -33,6 +41,16 @@ export const Popup: React.FC<Props> = ({ title, url, opts }) => {
       <Row cols={1}>
         <div className="slds-text-heading_small">Copy as</div>
       </Row>
+      <ButtonGroup style={BtnGrpStyle}>
+        <Button
+          type="brand"
+          label="Rich Text"
+          onClick={(e) => {
+            copyToClipboardAsHtml(title, url);
+            window.close();
+          }}
+        />
+      </ButtonGroup>
       {opts.formats.map((format) => (
         <CopyButton key={format.name} title={title} url={url} format={format} />
       ))}

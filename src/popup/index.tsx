@@ -1,11 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Popup } from "./Popup";
-import {
-  escapeBrackets,
-  copyToClipboard,
-  copyToClipboardFromUrl,
-} from "../util";
+import { escapeBrackets, copyToClipboardFromUrl } from "../util";
 import { OptionsType } from "../options/Options";
 import { formats, Format } from "../constant";
 

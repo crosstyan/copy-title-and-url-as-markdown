@@ -3,3 +3,6 @@ node_modules
 dist/*.js
 dist/*.js.LICENSE.txt
 dist/assets
+*.crx
+*.zip
+*.pem

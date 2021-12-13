@@ -27,6 +27,10 @@ export const formats: Format[] = [
   },
   {
     template: "\\href{${url}}{${title}}",
-    name: "LaTex",
+    name: "LaTeX",
+  },
+  {
+    template: '<a href="${url}">${title}</a>',
+    name: "HTML",
   },
 ];

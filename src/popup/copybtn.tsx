@@ -16,14 +16,14 @@ type Props = {
   format: Format;
 };
 
-const btnGrpStyle: CSS.Properties = {
+export const BtnGrpStyle: CSS.Properties = {
   justifyContent: "center",
   alignContent: "center",
   marginBottom: "1em",
 };
 export const CopyButton: React.FC<Props> = ({ title, url, format }) => {
   return (
-    <ButtonGroup style={btnGrpStyle}>
+    <ButtonGroup style={BtnGrpStyle}>
       <Button
         type="brand"
         label={`${format.name}`}
