@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/zaki-yama/copy-title-and-url-as-markdown/compare/v1.11.0...v1.12.0) (2021-12-13)
+
+
+### Features
+
+* add rich text and solved "https://github.com/zaki-yama/copy-title-and-url-as-markdown/issues/184" ([a1d36b8](https://github.com/zaki-yama/copy-title-and-url-as-markdown/commit/a1d36b8820446e581fb2aaf577b7f73171985e24))
+* add sanitize option and buttons ([badf910](https://github.com/zaki-yama/copy-title-and-url-as-markdown/commit/badf910a3857da38739530a746d278c38a0b921b))
+
 ## [1.11.0](https://github.com/zaki-yama/copy-title-and-url-as-markdown/compare/v1.10.0...v1.11.0) (2021-12-13)
 
 
