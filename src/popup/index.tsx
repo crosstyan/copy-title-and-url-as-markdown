@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         selected_format: formats[0],
         formats: formats,
         isDecoded: false,
+        isSanitize: false,
       } as OptionsType,
       (options) => {
         // TypeScript Assertion
@@ -30,7 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
           opts.selected_format.template,
           tab.title,
           tab.url,
-          opts.isDecoded
+          opts.isDecoded,
+          opts.isSanitize
         );
 
         ReactDOM.render(

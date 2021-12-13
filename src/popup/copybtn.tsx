@@ -40,6 +40,14 @@ export const CopyButton: React.FC<Props> = ({ title, url, format }) => {
           window.close();
         }}
       />
+      <Button
+        type="neutral"
+        label="Sanitize"
+        onClick={(e) => {
+          copyToClipboardFromUrl(format.template, title, url, false, true);
+          window.close();
+        }}
+      />
     </ButtonGroup>
   );
 };

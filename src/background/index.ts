@@ -21,6 +21,7 @@ chrome.commands.onCommand.addListener((command) => {
         selected_format: formats[0],
         formats: formats,
         isDecoded: false,
+        isSanitize: false,
       } as OptionsType,
       (options: OptionsType) => {
         const tab = tabs[0];
@@ -28,7 +29,8 @@ chrome.commands.onCommand.addListener((command) => {
           options[key],
           tab.title,
           tab.url,
-          options.isDecoded
+          options.isDecoded,
+          options.isSanitize
         );
 
         chrome.browserAction.setBadgeText({ text: formatIndex });

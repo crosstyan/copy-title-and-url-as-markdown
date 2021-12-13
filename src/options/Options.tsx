@@ -20,12 +20,14 @@ export type OptionsType = {
   selected_format: Format;
   formats: Format[];
   isDecoded?: boolean;
+  isSanitize?: boolean;
 };
 
 const initialValue: OptionsType = {
   selected_format: formats[0],
   formats: formats,
   isDecoded: false,
+  isSanitize: false,
 };
 
 export const Options: React.FC = () => {
@@ -102,6 +104,14 @@ export const Options: React.FC = () => {
         onChange={(e) => {
           setOptions({ ...options, isDecoded: e.currentTarget.checked });
           onSave({ ...options, isDecoded: e.currentTarget.checked });
+        }}
+      />
+      <Checkbox
+        label="Default sanitize title"
+        checked={options.isSanitize}
+        onChange={(e) => {
+          setOptions({ ...options, isSanitize: e.currentTarget.checked });
+          onSave({ ...options, isSanitize: e.currentTarget.checked });
         }}
       />
       <h2 className="slds-text-heading_medium slds-m-bottom_small">

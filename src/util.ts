@@ -1,3 +1,5 @@
+import { encode } from "html-entities";
+
 export function escapeTabsAndNewLines(str: string) {
   return str.replace(/\n/g, "\\n").replace(/\t/g, "\\t");
 }
@@ -18,12 +20,18 @@ export function copyToClipboardFromUrl(
   template: string,
   title: string,
   url: string,
-  isDecode = false
+  isDecode = false,
+  isSanitize = false
 ) {
   console.log("copyToClipboard", template, title, url);
   let escapedUrl = escapeBrackets(url);
   if (isDecode) {
     escapedUrl = decodeURI(escapedUrl);
+  }
+  if (isSanitize) {
+    // I know it's bad to modify the original string
+    // but I'm lazy
+    title = encode(title);
   }
   const el = document.getElementById("dummy") as HTMLTextAreaElement;
   const textToCopy = template
