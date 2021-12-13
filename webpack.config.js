@@ -7,6 +7,10 @@ module.exports = (_, argv) => ({
     background: path.join(__dirname, "src/background/index.ts"),
   },
   devtool: argv.mode === "production" ? false : "inline-source-map",
+	optimization: {
+		// We no not want to minimize our code.
+		minimize: false
+	},
   module: {
     rules: [
       {
