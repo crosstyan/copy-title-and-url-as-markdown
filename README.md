@@ -29,8 +29,10 @@ $env:NODE_OPTIONS="--openssl-legacy-provider"
 What you need to do then is
 
 ```bash
-yarn run build
+yarn run dev-build
 ```
+
+I'm not sure why but the code refuses to run with production build. (minimized code build with webpack)
 
 If there is any error like
 

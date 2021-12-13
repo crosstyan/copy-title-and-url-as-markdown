@@ -33,9 +33,15 @@ export const Popup: React.FC<Props> = ({ title, url, opts }) => {
         </div>
       </Row>
       <Row cols={1}>
-        <div>{`has been copy as ${opts.selected_format.name} ${
-          opts.isDecoded ? "(Decoded)" : ""
-        }`}</div>
+        <div>
+          {`has been copy as ${opts.selected_format.name} `} 
+          <small>
+            {`${opts.isSanitize ? "Sanitized" : " "}`}
+          </small>
+          <small>
+            {`${opts.isDecoded ? "Decoded" : " "}`}
+          </small>
+        </div>
       </Row>
       <hr />
       <Row cols={1}>
@@ -47,6 +53,14 @@ export const Popup: React.FC<Props> = ({ title, url, opts }) => {
           label="Rich Text"
           onClick={(e) => {
             copyToClipboardAsHtml(title, url);
+            window.close();
+          }}
+        />
+        <Button
+          type="neutral"
+          label="Sanitize"
+          onClick={(e) => {
+            copyToClipboardAsHtml(title, url, true);
             window.close();
           }}
         />

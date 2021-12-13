@@ -45,14 +45,15 @@ export function copyToClipboardFromUrl(
   console.log("Successfully copied to clipboard: " + textToCopy);
 }
 
-export function copyToClipboardAsHtml(title: string, url: string) {
-  const isDecode = false;
+export function copyToClipboardAsHtml(title: string, url: string, isSanitize = false) {
   const template = '<a href="${url}">${title}</a>';
   console.log("copyToClipboard", template, title, url);
   let escapedUrl = escapeBrackets(url);
 
-  if (isDecode) {
-    escapedUrl = decodeURI(escapedUrl);
+  if (isSanitize) {
+    // I know it's bad to modify the original string
+    // but I'm lazy
+    title = encode(title);
   }
   const textToCopy = template
     .replace("${title}", title)
