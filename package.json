@@ -8,13 +8,11 @@
     "postinstall": "cp -r node_modules/@salesforce-ux/design-system/assets dist",
     "prebuild": "rm dist/*.js",
     "build": "webpack --mode=production",
-    "build-legacy": "webpack --mode=production --openssl-legacy-provider",
     "dev-build": "webpack --mode=development",
     "watch": "webpack --mode=development -w",
     "zip": "bestzip dist.zip dist/*",
     "lint": "eslint --ext .ts,.tsx src/**",
     "release": "run-s lint build && standard-version",
-    "release-legacy": "run-s lint build --openssl-legacy-provider && standard-version --openssl-legacy-provider",
     "release:dry-run": "standard-version --dry-run",
     "test": "jest",
     "storybook": "start-storybook -s dist -p 6006"
